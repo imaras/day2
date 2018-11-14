@@ -46,7 +46,7 @@ array::array(array&& other)
 
 array::~array()
 {
-	delete p;
+	delete[] p;
 	p = nullptr;
 	n = 0;
 }
@@ -75,7 +75,7 @@ array& array::operator=(const array& other)
 {
 	if (this != &other)
 	{
-		delete p;
+		delete[] p;
 		copy_impl(other);
 	}
 	return *this;
